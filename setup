@@ -75,3 +75,4 @@ done
 # ---------------------------------------------------------------------------
 link $dotmac/zsh/zshrc            $HOME/.zshrc
 link $dotmac/ssh/config           $HOME/.ssh/config
+cp ${dotfiles}/fonts/*            $HOME/Library/Fonts/
