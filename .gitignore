@@ -1,0 +1,12 @@
+# Ignore Bundles
+# ---------------
+.netrwhist
+.neobundle
+NeoBundle.lock
+bundle/
+bundle/*
+cache
+backup
+views
+undo
+.DS_Store
