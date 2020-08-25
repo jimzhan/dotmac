@@ -4,6 +4,7 @@
 # ================================================================================
 dotmac="$HOME/.mac"
 repos="https://github.com/jimzhan/dotmac.git"
+zsh="$HOME/.oh-my-zsh"
 
 
 # ================================================================================
@@ -58,10 +59,34 @@ link() {
 # Setup Foundations
 # ---------------------------------------------------------------------------
 brew install terminal-notifier
+if [ ! -d $dotmac ]; then
+  log "Setting up my Mac..."
+  if [ ! -d $zsh ]; then
+    git clone git://github.com/robbyrussell/oh-my-zsh.git $zsh
+  fi
+  git clone --recursive $repos $dotmac
 
-# ---------------------------------------------------------------------------
-# Setup Preferences
-# ---------------------------------------------------------------------------
+  # zsh (as dotfiles's submodule)
+  log "Setting up ZSH..."
+  export ZSH="$zsh"
+  chsh -s /bin/zsh
+  success "ZSH installed."
+
+  if [ ! -d "$HOME/.ssh" ]; then
+    mkdir $HOME/.ssh
+  fi
+else
+  log "Updating dotfiles..."
+  cd $dotmac
+  git pull
+  git submodule update --init --recursive
+
+  # zsh
+  log "Updating ZSH..."
+  cd $zsh
+  git pull
+fi
+
 
 # ---------------------------------------------------------------------------
 # LaunchAgent Services
