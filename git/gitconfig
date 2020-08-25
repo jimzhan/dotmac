@@ -1,0 +1,25 @@
+[user]
+  email = jim.zhan@me.com
+  name = jimzhan
+[push]
+  default = current
+
+[alias]
+  st = status
+  ci = commit -am
+  l = log --oneline --decorate -12 --color
+  ll = log --oneline --decorate --color
+  lc = log --graph --color
+  co = checkout
+  br = branch
+  rb = rebase
+  dci = dcommit
+  smi = submodule init
+  smu = submodule update
+  smp = submodule foreach git pull
+  smc = submodule foreach git co master
+
+[color]
+  ui = true
+[github]
+  user = jimzhan

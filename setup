@@ -109,4 +109,5 @@ done
 # ---------------------------------------------------------------------------
 link    $dotmac/zsh/zshrc            $HOME/.zshrc
 link    $dotmac/ssh/config           $HOME/.ssh/config
+link    $dotmac/git/gitconfig        $HOME/.gitconfig
 cp      $dotmac/fonts/*              $HOME/Library/Fonts/
