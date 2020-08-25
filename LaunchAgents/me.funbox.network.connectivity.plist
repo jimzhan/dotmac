@@ -7,7 +7,7 @@
 
   <key>ProgramArguments</key>
   <array>
-    <string>/Users/jim/.files/LaunchAgents/me.funbox.network.connectivity.sh</string>
+    <string>/Users/jim/.mac/LaunchAgents/me.funbox.network.connectivity.sh</string>
   </array>
 
   <key>Nice</key>
