@@ -25,4 +25,4 @@ OnlinePrompt() {
 # Powerline + Prompt
 #-------------------
 PROMPT='╭ ${cwd} $(git_prompt_info) ${linebreak}╰ $(OnlinePrompt) '
-
+RPROMPT=%{${lineup}%}%{$fg[yellow]%}[%D{%Y-%m-%d}]%{$reset_color%}%{${linedown}%}
