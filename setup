@@ -76,7 +76,7 @@ if [ ! -d $dotmac ]; then
     mkdir $HOME/.ssh
   fi
 else
-  log "Updating dotfiles..."
+  log "Updating my Mac..."
   cd $dotmac
   git pull
   git submodule update --init --recursive
@@ -106,6 +106,6 @@ done
 # ---------------------------------------------------------------------------
 # Ensure We Have Linked All dot files.
 # ---------------------------------------------------------------------------
-link $dotmac/zsh/zshrc            $HOME/.zshrc
-link $dotmac/ssh/config           $HOME/.ssh/config
-cp ${dotfiles}/fonts/*            $HOME/Library/Fonts/
+link    $dotmac/zsh/zshrc            $HOME/.zshrc
+link    $dotmac/ssh/config           $HOME/.ssh/config
+cp      $dotmac/fonts/*              $HOME/Library/Fonts/
