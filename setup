@@ -58,7 +58,8 @@ link() {
 # ---------------------------------------------------------------------------
 # Setup Foundations
 # ---------------------------------------------------------------------------
-brew install terminal-notifier
+brew install direnv terminal-notifier
+
 if [ ! -d $dotmac ]; then
   log "Setting up my Mac..."
   if [ ! -d $zsh ]; then
