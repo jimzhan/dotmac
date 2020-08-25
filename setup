@@ -107,7 +107,9 @@ done
 # ---------------------------------------------------------------------------
 # Ensure We Have Linked All dot files.
 # ---------------------------------------------------------------------------
-link    $dotmac/zsh/zshrc            $HOME/.zshrc
-link    $dotmac/ssh/config           $HOME/.ssh/config
-link    $dotmac/git/gitconfig        $HOME/.gitconfig
+link    $dotmac/zsh/zshrc                           $HOME/.zshrc
+link    $dotmac/ssh/config                          $HOME/.ssh/config
+link    $dotmac/git/gitconfig                       $HOME/.gitconfig
+link    $dotmac/iTerm/com.googlecode.iterm2.plist   $HOME/Library/Preferences/com.googlecode.iterm2.plist
+
 cp      $dotmac/fonts/*              $HOME/Library/Fonts/
