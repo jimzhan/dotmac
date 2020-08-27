@@ -10,14 +10,14 @@ ZSH_TMUX_AUTOSTART=false
 ZSH_TMUX_AUTOSTART_ONCE=true
 plugins=(colorize command-not-found cp git osx python)
 source $ZSH/oh-my-zsh.sh
+source $HOME/.mac/zsh/aliases.sh
 source $HOME/.mac/zsh/prompt.sh
 eval "$(direnv hook zsh)"
 
 
 # ============================================================
-#  ALIASES AND FUNCTIONS
+#  FUNCTIONS
 # ============================================================
-alias vi="vim"
 ##------------------------------
 ## Growl for Notification Center
 ##------------------------------
