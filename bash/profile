@@ -21,7 +21,7 @@ alias lstcp="lsof -i -n -P | grep TCP"
 alias lsudp="lsof -i -n -P | grep UDP"
 
 alias ga="git add"
-alias gc="git commit"
+alias gc="git commit -m"
 alias gs="git status"
 alias gd="git diff"
 alias gl="git log"
