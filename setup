@@ -2,9 +2,8 @@
 # ================================================================================
 # Variables
 # ================================================================================
-dotmac="$HOME/.mac"
-bash="$HOME/.oh-my-bash"
-repos="https://github.com/jimzhan/dotmac.git"
+MAC="$HOME/.mac"
+OMB="$HOME/.oh-my-bash"
 
 # ================================================================================
 # Functions
@@ -57,15 +56,15 @@ link() {
 # ---------------------------------------------------------------------------
 # Setup Foundations
 # ---------------------------------------------------------------------------
-if [ ! -d $dotmac ]; then
+if [ ! -d $MAC ]; then
   log "Setting up my Mac..."
-  if [ ! -d $bash ]; then
-    git clone git://github.com/ohmybash/oh-my-bash.git $bash
+  if [ ! -d $OMB ]; then
+    git clone git://github.com/ohmybash/oh-my-bash.git $OMB
   fi
 
   # Bash (as dotfiles's submodule)
   log "Setting up Bash..."
-  export BASH="$bash"
+  export BASH="$OMB"
   chsh -s /bin/bash
   success "Bash installed."
 
@@ -74,12 +73,12 @@ if [ ! -d $dotmac ]; then
   fi
 else
   log "Updating my Mac..."
-  cd $dotmac
+  cd $MAC
   git pull
 
   # bash
   log "Updating Bash..."
-  cd $bash
+  cd $OMB
   git pull
 fi
 
@@ -91,27 +90,27 @@ if [ ! -d "$HOME/Library/LaunchAgents" ]; then
   mkdir $HOME/Library/LaunchAgents
 fi
 
-for filepath in $dotmac/LaunchAgents/*.plist
+for filepath in $MAC/LaunchAgents/*.plist
 do
   filename=$(basename $filepath)
-  link $dotmac/LaunchAgents/$filename   $HOME/Library/LaunchAgents/$filename
+  link $MAC/LaunchAgents/$filename   $HOME/Library/LaunchAgents/$filename
   launchctl load $HOME/Library/LaunchAgents/$filename
 done
 
 if [ ! -d "$HOME/.ssh" ]; then
   mkdir $HOME/.ssh
 fi
-if [ ! -d "$bash/themes/funbox" ]; then
-  mkdir $bash/themes/funbox
+if [ ! -d "$OMB/themes/funbox" ]; then
+  mkdir $OMB/themes/funbox
 fi
 # ---------------------------------------------------------------------------
 # Ensure We Have Linked All dot files.
 # ---------------------------------------------------------------------------
-link    $dotmac/bash/profile                        $HOME/.profile
-link    $dotmac/bash/bash_profile                   $HOME/.bash_profile
-link    $dotmac/bash/bashrc                         $HOME/.bashrc
-link    $dotmac/ssh/config                          $HOME/.ssh/config
-link    $dotmac/git/gitconfig                       $HOME/.gitconfig
-link    $dotmac/iTerm/com.googlecode.iterm2.plist   $HOME/Library/Preferences/com.googlecode.iterm2.plist
-link    $dotmac/bash/funbox.theme.sh                $bash/themes/funbox/funbox.theme.sh 
-cp      $dotmac/fonts/*                             $HOME/Library/Fonts/
+link    $MAC/bash/profile                        $HOME/.profile
+link    $MAC/bash/bash_profile                   $HOME/.bash_profile
+link    $MAC/bash/bashrc                         $HOME/.bashrc
+link    $MAC/ssh/config                          $HOME/.ssh/config
+link    $MAC/git/gitconfig                       $HOME/.gitconfig
+link    $MAC/iTerm/com.googlecode.iterm2.plist   $HOME/Library/Preferences/com.googlecode.iterm2.plist
+link    $MAC/bash/funbox.theme.sh                $OMB/themes/funbox/funbox.theme.sh 
+cp      $MAC/fonts/*                             $HOME/Library/Fonts/
