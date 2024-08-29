@@ -3,9 +3,8 @@
 # Variables
 # ================================================================================
 dotmac="$HOME/.mac"
+bash="$HOME/.oh-my-bash"
 repos="https://github.com/jimzhan/dotmac.git"
-zsh="$HOME/.oh-my-zsh"
-
 
 # ================================================================================
 # Functions
@@ -62,16 +61,15 @@ brew install direnv terminal-notifier
 
 if [ ! -d $dotmac ]; then
   log "Setting up my Mac..."
-  if [ ! -d $zsh ]; then
-    git clone git://github.com/robbyrussell/oh-my-zsh.git $zsh
+  if [ ! -d $bash ]; then
+    git clone git://github.com/ohmybash/oh-my-bash.git $bash
   fi
-  git clone --recursive $repos $dotmac
 
-  # zsh (as dotfiles's submodule)
-  log "Setting up ZSH..."
-  export ZSH="$zsh"
-  chsh -s /bin/zsh
-  success "ZSH installed."
+  # Bash (as dotfiles's submodule)
+  log "Setting up Bash..."
+  export BASH="$bash"
+  chsh -s /bin/bash
+  success "Bash installed."
 
   if [ ! -d "$HOME/.ssh" ]; then
     mkdir $HOME/.ssh
@@ -80,11 +78,10 @@ else
   log "Updating my Mac..."
   cd $dotmac
   git pull
-  git submodule update --init --recursive
 
-  # zsh
-  log "Updating ZSH..."
-  cd $zsh
+  # bash
+  log "Updating Bash..."
+  cd $bash
   git pull
 fi
 
@@ -107,9 +104,9 @@ done
 # ---------------------------------------------------------------------------
 # Ensure We Have Linked All dot files.
 # ---------------------------------------------------------------------------
-link    $dotmac/zsh/zshrc                           $HOME/.zshrc
+link    $dotmac/bash/bash_profile                   $HOME/.bash_profile
+link    $dotmac/bash/bashrc                         $HOME/.bashrc
 link    $dotmac/ssh/config                          $HOME/.ssh/config
 link    $dotmac/git/gitconfig                       $HOME/.gitconfig
 link    $dotmac/iTerm/com.googlecode.iterm2.plist   $HOME/Library/Preferences/com.googlecode.iterm2.plist
-
-cp      $dotmac/fonts/*              $HOME/Library/Fonts/
+cp      $dotmac/fonts/*                             $HOME/Library/Fonts/
