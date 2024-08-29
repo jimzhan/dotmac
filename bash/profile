@@ -1,3 +1,11 @@
+# Local Proxy
+if lsof -Pi :7890 -sTCP:LISTEN -t >/dev/null ; then
+  export no_proxy="localhost,127.0.0.1,localaddress,.localdomain.com"
+  export http_proxy="http://127.0.0.1:7890"
+  export https_proxy=$http_proxy
+  export all_proxy=socks5://127.0.0.1:7890
+fi
+# Aliases
 alias python=python3
 alias pip=pip3
 alias ipython=ipython3
@@ -5,3 +13,4 @@ alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
+
