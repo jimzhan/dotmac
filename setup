@@ -57,8 +57,6 @@ link() {
 # ---------------------------------------------------------------------------
 # Setup Foundations
 # ---------------------------------------------------------------------------
-brew install direnv terminal-notifier
-
 if [ ! -d $dotmac ]; then
   log "Setting up my Mac..."
   if [ ! -d $bash ]; then
@@ -100,7 +98,12 @@ do
   launchctl load $HOME/Library/LaunchAgents/$filename
 done
 
-
+if [ ! -d "$HOME/.ssh" ]; then
+  mkdir $HOME/.ssh
+fi
+if [ ! -d "$bash/themes/funbox" ]; then
+  mkdir $bash/themes/funbox
+fi
 # ---------------------------------------------------------------------------
 # Ensure We Have Linked All dot files.
 # ---------------------------------------------------------------------------
@@ -110,4 +113,5 @@ link    $dotmac/bash/bashrc                         $HOME/.bashrc
 link    $dotmac/ssh/config                          $HOME/.ssh/config
 link    $dotmac/git/gitconfig                       $HOME/.gitconfig
 link    $dotmac/iTerm/com.googlecode.iterm2.plist   $HOME/Library/Preferences/com.googlecode.iterm2.plist
+link    $dotmac/bash/funbox.theme.sh                $bash/themes/funbox/funbox.theme.sh 
 cp      $dotmac/fonts/*                             $HOME/Library/Fonts/
