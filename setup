@@ -104,6 +104,7 @@ done
 # ---------------------------------------------------------------------------
 # Ensure We Have Linked All dot files.
 # ---------------------------------------------------------------------------
+link    $dotmac/bash/profile                        $HOME/.profile
 link    $dotmac/bash/bash_profile                   $HOME/.bash_profile
 link    $dotmac/bash/bashrc                         $HOME/.bashrc
 link    $dotmac/ssh/config                          $HOME/.ssh/config
