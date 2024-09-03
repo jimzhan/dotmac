@@ -29,3 +29,16 @@ alias gl="git log"
 if [ -x /usr/local/bin/gls ]; then
   alias ls="gls --color=auto --group-directories-first"
 fi
+#-------------------
+# System Paths
+#-------------------
+export LDFLAGS="-L/usr/local/opt/node@20/lib"
+export CPPFLAGS="-I/usr/local/opt/node@20/include"
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/opt/node@20/bin:$PATH"
+export LESS="-R"
+#----------------------------------
+# Environment Variables & Functions
+#----------------------------------
+export EDITOR="vim"
+
+
