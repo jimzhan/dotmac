@@ -58,7 +58,7 @@ link() {
 # ---------------------------------------------------------------------------
 if [ ! -d $MAC ]; then
   log "Setting up my Mac..."
-  mkdir $MAC
+  git clone --recursive https://github.com/jimzhan/dotmac.git $MAC
   if [ ! -d $OMB ]; then
     git clone https://github.com/ohmybash/oh-my-bash $OMB
   fi
