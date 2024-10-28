@@ -58,6 +58,7 @@ link() {
 # ---------------------------------------------------------------------------
 if [ ! -d $MAC ]; then
   log "Setting up my Mac..."
+  mkdir $MAC
   if [ ! -d $OMB ]; then
     git clone https://github.com/ohmybash/oh-my-bash $OMB
   fi
