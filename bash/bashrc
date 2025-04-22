@@ -144,4 +144,7 @@ source "$OSH"/oh-my-bash.sh
 # alias ohmybash="mate ~/.oh-my-bash"
 #
 # `brew install coreutils`
-alias ls="gls --color -h --group-directories-first"
+# alias ls="gls --color -h --group-directories-first"
+
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin:/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
+

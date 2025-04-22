@@ -34,8 +34,10 @@ fi
 #-------------------
 export LDFLAGS="-L/usr/local/opt/node@20/lib"
 export CPPFLAGS="-I/usr/local/opt/node@20/include"
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/opt/node@20/bin:$PATH"
+export PATH="/opt/homebrew/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
 export LESS="-R"
+# `brew install coreutils`
+# alias ls="gls --color -h --group-directories-first"
 #----------------------------------
 # Environment Variables & Functions
 #----------------------------------
