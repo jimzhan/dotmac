@@ -42,5 +42,4 @@ export LESS="-R"
 # Environment Variables & Functions
 #----------------------------------
 export EDITOR="vim"
-
-
+export LC_ALL=en_US.UTF-8

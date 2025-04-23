@@ -112,6 +112,5 @@ link    $MAC/bash/bash_profile                   $HOME/.bash_profile
 link    $MAC/bash/bashrc                         $HOME/.bashrc
 link    $MAC/ssh/config                          $HOME/.ssh/config
 link    $MAC/git/gitconfig                       $HOME/.gitconfig
-link    $MAC/iTerm/com.googlecode.iterm2.plist   $HOME/Library/Preferences/com.googlecode.iterm2.plist
 link    $MAC/bash/funbox.theme.sh                $OMB/themes/funbox/funbox.theme.sh 
 cp      $MAC/fonts/*                             $HOME/Library/Fonts/
