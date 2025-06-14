@@ -95,7 +95,7 @@ for filepath in $MAC/LaunchAgents/*.plist
 do
   filename=$(basename $filepath)
   link $MAC/LaunchAgents/$filename   $HOME/Library/LaunchAgents/$filename
-  launchctl load $HOME/Library/LaunchAgents/$filename
+  sudo launchctl load $HOME/Library/LaunchAgents/$filename
 done
 
 if [ ! -d "$HOME/.ssh" ]; then
